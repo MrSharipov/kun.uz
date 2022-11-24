@@ -24,11 +24,14 @@ ul li {
 
 #news_box {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px 0;
 }
 .news {
   width: 300px;
+}
+.news img {
+  width: 100%;
 }
