@@ -9,6 +9,19 @@ const getNews = () => {
         .then(data => showResult(data.articles));
 }
 
+const handleSearch = () => {
+    const searchText = document.getElementById('searchText');
+    getNewsByCategory(searchText.value);
+    searchText.value = '';
+}
+
+const getNewsByCategory = (category) => {
+    const apiLink = `https://newsapi.org/v2/top-headlines?country=de&category=${category}&apiKey=632e1ffdb365469d8ab34ba6447aafb2`;
+    fetch(apiLink)
+        .then(res => res.json())
+        .then(data => showResult(data.articles));
+}
+
 const showResult = (data) => {
     let text = '';
     data.forEach(news => {
